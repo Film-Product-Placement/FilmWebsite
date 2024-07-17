@@ -1,11 +1,11 @@
 const User = require('../models/userModel');
 
-// 获取管理员仪表盘
+// get admin's dashboard
 /*exports.getDashboard = (req, res) => {
     res.json({ message: 'Welcome to the Admin Dashboard' });
 };*/
 
-// 获取管理员仪表盘并返回所有用户信息
+// return all users info
 exports.getDashboard = async (req, res) => {
     try {
         const users = await User.find().select('-password');
@@ -17,7 +17,7 @@ exports.getDashboard = async (req, res) => {
     }
 };
 
-// 获取用户列表
+// get users list
 exports.getUsers = async (req, res) => {
     try {
         const users = await User.find().select('-password');
@@ -29,7 +29,7 @@ exports.getUsers = async (req, res) => {
     }
 };
 
-// 更新用户信息
+// update the user info
 exports.updateUser = async (req, res) => {
     try {
         const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -41,7 +41,7 @@ exports.updateUser = async (req, res) => {
     }
 };
 
-// 删除用户
+// delete users
 exports.deleteUser = async (req, res) => {
     try {
         await User.findByIdAndRemove(req.params.id);
