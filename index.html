@@ -24,8 +24,11 @@
             <li><a href="#more">More</a></li>
         </ul>
         <div class="right-header">
-            <a href="profile_section/profile.html" class="btn">Profile</a>
-            <a href="#" class="btn">Sign Up</a>
+            <!-- <a href="profile_section/profile.html" class="btn">Profile</a> -->
+            <a href="profile_section/signup.html" class="btn">Sign Up</a> <!--  -->
+            <a href="profile_section/login.html" class="btn">Login</a> <!--  -->
+            <a href="profile_section/profile.html" class="btn" id="profile-btn" style="display:none;">Profile</a>
+            <!-- default hide -->
             <div class="menu-icon">
                 <div class="bar"></div>
             </div>
@@ -223,6 +226,17 @@
     <!-- mixitup cdn js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
     <script src="script.js"></script>
+    <script>
+        // check if has logged in
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('token');
+            if (token) {
+                document.getElementById('profile-btn').style.display = 'block';
+                document.querySelector('a[href="profile_section/signup.html"]').style.display = 'none';
+                document.querySelector('a[href="profile_section/login.html"]').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 
 </html>

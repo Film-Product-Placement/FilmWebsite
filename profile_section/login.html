@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="overlay"></div>
     <header>
@@ -48,32 +50,34 @@
                     <span>Please sign in to your account to use our services</span>
                 </div>
 
-                <form action="#">
-
+                <form id="loginForm">
                     <div class="main">
                         <div class="card">
                             <div class="title">ACCOUNT TYPE</div>
                             <div class="rad">
                                 <label><input type="radio" class="input-radio off" name="FM"> FILM MAKER</label>
-                                <label><input type="radio" class="input-radio on"  name="FM"> BIDDERS</label>
+                                <label><input type="radio" class="input-radio on" name="FM"> BIDDERS</label>
                             </div>
                         </div>
                     </div>
 
-                    <label for="username">Username</label>
-                    <input type="text" placeholder="Email or Phone" id="username">
-                    
+                    <!--<label for="username">Username</label>
+                    <input type="text" placeholder="Email or Phone" id="username"> -->
+
+                    <label for="email">Email</label>
+                    <input type="email" placeholder="Email or Phone" id="email">
+
                     <label for="password">Password</label>
                     <input type="password" placeholder="Password" id="password">
                     <a href="#" class="fp">Forgot password?</a>
 
                     <div class="formBtn">
-                        <button type="submit" class="btnn">Login</button>
+                        <button type="submit" id="submit" class="btnn">Login</button>
                     </div>
 
                     <div class="footer_card">
                         <p>Not a member?</p>
-                        <a href="../signup.html">Sign Up now</a>
+                        <a href="../profile_section/signup.html">Sign Up now</a>
                     </div>
 
                     <p class="alt__login__text">Or Log In with</p>
@@ -84,11 +88,11 @@
                         <div class="ln"><i class="fab fa-linkedin"></i>LinkedIn</div>
                     </div>
                 </form>
-                
+
             </div>
         </div>
     </section>
-    
+
 
     <footer>
         <p>© 2023 Film Unite. All rights reserved.</p>
@@ -102,4 +106,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
     <script src="login.js"></script>
 </body>
+
 </html>

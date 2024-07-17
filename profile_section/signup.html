@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,10 +10,11 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-	<link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
 </head>
+
 <body>
     <div class="overlay"></div>
     <header>
@@ -35,27 +37,26 @@
     <section class="home" id="home">
         <div class="hero-info">
             <h1>Ready to Get Started?...</h1>
-            <p>Welcome aboard! Let's begin your journey with us. Sign up and start discovering what's in store for you.</p>
+            <p>Welcome aboard! Let's begin your journey with us. Sign up and start discovering what's in store for you.
+            </p>
         </div>
     </section>
 
     <section class="login" id="login">
         <div class="loginDiv">
             <div class="login-info">
-
                 <div class="main-text">
                     <h2 class="heading">SIGNUP HERE</h2>
                     <span>Please sign up to create your account to use our services</span>
                 </div>
 
-                <form action="#">
-
+                <form id="signupForm">
                     <div class="main">
                         <div class="card">
                             <div class="title">ACCOUNT TYPE</div>
                             <div class="rad">
                                 <label><input type="radio" class="input-radio off" name="FM"> FILM MAKER</label>
-                                <label><input type="radio" class="input-radio on"  name="FM"> BIDDERS</label>
+                                <label><input type="radio" class="input-radio on" name="FM"> BIDDERS</label>
                             </div>
                         </div>
                     </div>
@@ -64,22 +65,22 @@
                     <input type="text" placeholder="Enter your name" id="fullname" required>
 
                     <label for="email">Email</label>
-                    <input type="text" placeholder="Enter your email" id="email" required>
-     
+                    <input type="email" placeholder="Enter your email" id="email" required>
+
                     <label for="phone">Phone</label>
                     <input type="text" placeholder="Enter your phone number" id="phone" required>
-    
+
                     <label for="username">Username</label>
                     <input type="text" placeholder="Enter your username" id="username" required>
-                    
+
                     <label for="password">Password</label>
                     <input type="password" placeholder="Enter your password" id="password" required>
-                    
-                    <label for="password_cnf">Password</label>
+
+                    <label for="password_cnf">Confirm your Password</label>
                     <input type="password" placeholder="Confirm your password" id="password_cnf" required>
-                    
+
                     <div class="formBtn">
-                        <button type="submit" class="btnn">Login</button>
+                        <button type="submit" id="submit" class="btnn">Sign Up</button>
                     </div>
 
                     <div class="footer_card">
@@ -95,11 +96,10 @@
                         <div class="ln"><i class="fab fa-linkedin"></i>LinkedIn</div>
                     </div>
                 </form>
-                
             </div>
         </div>
     </section>
-    
+
 
     <footer>
         <p>© 2023 Film Unite. All rights reserved.</p>
@@ -111,6 +111,8 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- mixitup cdn js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
+    <script src="signup.js"></script>
     <!-- <script src="profile.js"></script> -->
 </body>
+
 </html>
