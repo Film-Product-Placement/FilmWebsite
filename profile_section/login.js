@@ -73,7 +73,16 @@ document.addEventListener('DOMContentLoaded', function () {
           alert(data.message);
           localStorage.setItem('token', data.token); // store JWT token
           localStorage.setItem('email', email); // store users' email
-          window.location.href = 'profile.html'; // redirect to the user profile
+          // Check user type and redirect accordingly
+          if (data.user.isAdmin) {
+            window.location.href = 'adminProfile.html'; // redirect to admin profile
+          } else if (data.user.accountType === 'filmmaker') {
+            window.location.href = 'filmmaker_profile.html'; // redirect to filmmaker profile
+          } else if (data.user.accountType === 'bidder') {
+            window.location.href = 'filmbidder_profile.html'; // redirect to filmbidder profile
+          } else {
+            window.location.href = 'profile.html'; // default user profile
+          }
         } else {
           const error = await response.json();
           alert(`Login failed: ${error.message}`);

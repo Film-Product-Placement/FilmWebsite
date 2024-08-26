@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Profile</title>
+    <link rel="stylesheet" href="adminProfile.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="logo">LOGO</a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="more.html">More</a>
+        </nav>
+        <a href="login.html" id="logoutButton">Logout</a>
+    </header>
+
+    <section class="profile">
+        <h1>Admin Profile</h1>
+        <p>Username: <span id="username"></span></p>
+        <p>Email: <span id="email"></span></p>
+    </section>
+
+    <section class="admin-actions">
+        <h2>Manage Users</h2>
+        <button id="fetchUsers">Fetch All Users</button>
+        <pre id="usersData"></pre>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const email = localStorage.getItem('email');
+            document.getElementById('email').textContent = email;
+            document.getElementById('logoutButton').addEventListener('click', () => {
+                localStorage.removeItem('token');
+                localStorage.removeItem('email');
+                alert('You have been logged out.');
+                window.location.href = 'login.html';
+            });
+        });
+
+        document.getElementById('fetchUsers').addEventListener('click', async () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                alert('No token found. Please log in.');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/admin/users', {
+                    method: 'GET',
+                    headers: {
+                        'x-auth-token': token
+                    }
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+
+                const data = await response.json();
+                document.getElementById('usersData').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                console.error('Error fetching users:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>
