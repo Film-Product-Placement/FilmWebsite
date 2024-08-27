@@ -1,4 +1,4 @@
 {
-    "MONGO_URI": "mongodb://localhost:27017/mydatabase",
+    "MONGO_URI": "mongodb+srv://filmunite:qY9gYJG4oSgJ7xxZ@forreelroots.blxe6.mongodb.net/?retryWrites=true&w=majority&appName=forReelRoots",
     "JWT_SECRET": "mysecrettoken"
 }

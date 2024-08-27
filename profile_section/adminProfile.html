@@ -49,6 +49,7 @@
             const token = localStorage.getItem('token');
             if (!token) {
                 alert('No token found. Please log in.');
+                window.location.href = 'login.html';
                 return;
             }
 
@@ -56,7 +57,7 @@
                 const response = await fetch('/api/admin/users', {
                     method: 'GET',
                     headers: {
-                        'x-auth-token': token
+                        'Authorization': `Bearer ${token}`
                     }
                 });
 
@@ -68,6 +69,7 @@
                 document.getElementById('usersData').textContent = JSON.stringify(data, null, 2);
             } catch (error) {
                 console.error('Error fetching users:', error);
+                window.location.href = 'login.html';
             }
         });
     </script>

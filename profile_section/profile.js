@@ -83,15 +83,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             // Redirect based on user role
             if (data.isAdmin) {
-                document.getElementById('admin-actions').style.display = 'block';
+                //document.getElementById('admin-actions').style.display = 'block';
                 window.location.href = 'adminProfile.html';
             } else if (data.accountType === 'filmmaker') {
                 window.location.href = 'filmmaker_profile.html';
             } else if (data.accountType === 'bidder') {
                 window.location.href = 'filmbidder_profile.html';
-            } else {
+            } /*else {
                 document.getElementById('admin-actions').style.display = 'none';
-            }
+            }*/
         } else {
             const error = await response.json();
             alert(`Failed to load profile: ${error.message}`);
