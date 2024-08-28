@@ -71,16 +71,7 @@ exports.loginUser = async (req, res) => {
         jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1h' }, (err, token) => {
             if (err) throw err;
             console.log('Generated token:', token);
-            res.status(200).json({
-                token,
-                message: 'User logged in successfully',
-                user: {
-                    username: user.username,
-                    email: user.email,
-                    isAdmin: user.isAdmin,
-                    accountType: user.accountType // make sure return accountType
-                }
-            });
+            res.status(200).json({ token, message: 'User logged in successfully' });
         });
     } catch (err) {
         res.status(500).json({ message: 'Server Error' });
