@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Film Website-Signup Section</title>
+    <title>Film Website-Login Section</title>
     <link rel="stylesheet" href="signup.css">
     <!-- boxicon css link -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -18,7 +18,7 @@
 <body>
     <div class="overlay"></div>
     <header>
-        <a href="#" class="logo">LOGO</a>
+        <a href="../index.html" class="logo">LOGO</a>
         <ul class="navlist">
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#about">About Us</a></li>
@@ -33,74 +33,79 @@
             </div>
         </div>
     </header>
+    <div class="container">
+        <section class="home" id="home">
+            <div class="hero-info">
+                <h1>Ready to Get Started?...</h1>
+                <p>Welcome aboard! Let's begin your journey with us. Sign up and start discovering what's in store for
+                    you.</p>
+            </div>
+        </section>
 
-    <section class="home" id="home">
-        <div class="hero-info">
-            <h1>Ready to Get Started?...</h1>
-            <p>Welcome aboard! Let's begin your journey with us. Sign up and start discovering what's in store for you.
-            </p>
-        </div>
-    </section>
+        <section class="login" id="login">
+            <div class="loginDiv">
+                <div class="login-info">
 
-    <section class="login" id="login">
-        <div class="loginDiv">
-            <div class="login-info">
-                <div class="main-text">
-                    <h2 class="heading">SIGNUP HERE</h2>
-                    <span>Please sign up to create your account to use our services</span>
-                </div>
+                    <div class="main-text">
+                        <h2 class="heading">Sign Up</h2>
+                    </div>
 
-                <form id="signupForm">
-                    <div class="main">
-                        <div class="card">
-                            <div class="title">ACCOUNT TYPE</div>
-                            <div class="rad">
-                                <label><input type="radio" class="input-radio off" name="accountType" value="filmmaker"
-                                        required> FILM MAKER</label>
-                                <label><input type="radio" class="input-radio on" name="accountType" value="bidder"
-                                        required> BIDDERS</label>
+                    <form id="loginForm">
+                        <div class="main">
+                            <div class="card">
+                                <div class="title">ACCOUNT TYPE</div>
+                                <div class="rad" style="display: flex; justify-content: space-evenly;">
+                                    <label><input type="radio" class="input-radio off" name="FM"> FILM MAKER</label>
+                                    <label><input type="radio" class="input-radio on" name="FM"> BIDDERS</label>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <label for="fullname">Full Name</label>
-                    <input type="text" placeholder="Enter your name" id="fullname" required>
+                        <!--<label for="username">Username</label>
+                    <input type="text" placeholder="Email or Phone" id="username"> -->
+                        
+                            <label for="fullname">Full Name</label>
+                            <input type="text" placeholder="Enter your name" id="fullname" required>
 
-                    <label for="email">Email</label>
-                    <input type="email" placeholder="Enter your email" id="email" required>
+                            <label for="email">Email</label>
+                            <input type="email" placeholder="Enter your email" id="email" required>
+                        
+                            <label for="phone">Phone</label>
+                            <input type="text" placeholder="Enter your phone number" id="phone" required>
 
-                    <label for="phone">Phone</label>
-                    <input type="text" placeholder="Enter your phone number" id="phone" required>
+    
+                        
+                    
+                            <label for="password">Password</label>
+                            <input type="password" placeholder="Enter your password" id="password" required>
 
-                    <label for="username">Username</label>
-                    <input type="text" placeholder="Enter your username" id="username" required>
+                            <label for="password_cnf">Confirm your Password</label>
+                            <input type="password" placeholder="Confirm your password" id="password_cnf" required>
+                        
 
-                    <label for="password">Password</label>
-                    <input type="password" placeholder="Enter your password" id="password" required>
+                        <div class="formBtn">
+                            <button type="submit" id="submit" class="btnn">Sign Up</button>
+                        </div>
 
-                    <label for="password_cnf">Confirm your Password</label>
-                    <input type="password" placeholder="Confirm your password" id="password_cnf" required>
+                        <div class="footer_card">
+                            <p>Already a member?</p>
+                            <a href="../profile_section/login.html">Log In now</a>
+                        </div>
 
-                    <div class="formBtn">
-                        <button type="submit" id="submit" class="btnn">Sign Up</button>
-                    </div>
 
-                    <div class="footer_card">
-                        <p>Already a member?</p>
-                        <a href="../login.html">Log In now</a>
-                    </div>
+                        <p class="alt__login__text">Or Sign Up with</p>
 
-                    <p class="alt__login__text">Or Sign Up with</p>
+                        <div class="social">
+                            <div class="go"><i class="fab fa-google"></i>Google</div>
+                            <div class="fb"><i class="fab fa-facebook"></i>Facebook</div>
+                            <div class="ln"><i class="fab fa-linkedin"></i>LinkedIn</div>
+                        </div>
+                    </form>
 
-                    <div class="social">
-                        <div class="go"><i class="fab fa-google"></i>Google</div>
-                        <div class="fb"><i class="fab fa-facebook"></i>Facebook</div>
-                        <div class="ln"><i class="fab fa-linkedin"></i>LinkedIn</div>
-                    </div>
-                </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
 
     <footer>
@@ -113,8 +118,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- mixitup cdn js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mixitup/3.3.1/mixitup.min.js"></script>
-    <script src="signup.js"></script>
-    <!-- <script src="profile.js"></script> -->
+    <script src="login.js"></script>
 </body>
 
 </html>
